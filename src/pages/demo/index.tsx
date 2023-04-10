@@ -58,6 +58,7 @@ export default function Demo() {
             headers={{
               'X-Cluster': localStorage.getItem('curCluster') || 'DEFAULT',
               Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
+              'X-User-Name': 'root',
             }}
             cluster={localStorage.getItem('curCluster') || 'DEFAULT'}
             value={promQL}

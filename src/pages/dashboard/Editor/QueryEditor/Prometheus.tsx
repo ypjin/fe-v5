@@ -65,6 +65,7 @@ export default function Prometheus({ chartForm }) {
                           headers={{
                             'X-Cluster': localStorage.getItem('curCluster') || 'DEFAULT',
                             Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
+                            'X-User-Name': 'root',
                           }}
                           cluster={localStorage.getItem('curCluster') || 'DEFAULT'}
                         />

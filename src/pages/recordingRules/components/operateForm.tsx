@@ -221,6 +221,7 @@ const operateForm: React.FC<Props> = ({ type, detail = {} }) => {
                         headers={{
                           'X-Cluster': form.getFieldValue('cluster').includes(ClusterAll) && clusterList.length > 0 ? clusterList[0] : form.getFieldValue('cluster')[0] || '',
                           Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
+                          'X-User-Name': 'root',
                         }}
                         onChange={(val) => {
                           if (val) {

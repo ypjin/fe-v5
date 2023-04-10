@@ -36,6 +36,7 @@ request.interceptors.request.use((url, options) => {
     ...options.headers,
   };
   headers['Authorization'] = `Bearer ${localStorage.getItem('access_token') || ''}`;
+  headers['X-User-Name'] = 'root';
   if (!headers['X-Cluster']) {
     headers['X-Cluster'] = localStorage.getItem('curCluster') || '';
   }
