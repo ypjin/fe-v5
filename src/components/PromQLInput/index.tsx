@@ -67,7 +67,7 @@ const ExpressionInput = (
   const realValue = useRef<string | undefined>(value || '');
   const defaultHeaders = {
     Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
-    'X-User-Name': 'root',
+    'X-User-Name': `${localStorage.getItem('userName') || ''}`,
   };
 
   useEffect(() => {

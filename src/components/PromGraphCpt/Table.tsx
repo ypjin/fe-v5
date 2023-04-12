@@ -102,7 +102,7 @@ export default function Table(props: IProps) {
           : {
               'X-Cluster': datasourceName || localStorage.getItem('curCluster') || 'DEFAULT',
               Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
-              'X-User-Name': 'root',
+              'X-User-Name': `${localStorage.getItem('userName') || ''}`,
             },
       )
         .then((res) => {

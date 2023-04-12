@@ -338,7 +338,7 @@ const operateForm: React.FC<Props> = ({ type, detail = {} }) => {
                                             headers={{
                                               'X-Cluster': cluster,
                                               Authorization: `Bearer ${localStorage.getItem('access_token') || ''}`,
-                                              'X-User-Name': 'root',
+                                              'X-User-Name': `${localStorage.getItem('userName') || ''}`,
                                             }}
                                             onChange={() => {
                                               setIsChecked(false);

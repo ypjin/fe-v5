@@ -33,6 +33,18 @@ import TaskHostOutput from '@/pages/taskOutput/host';
 
 function App() {
   const { t, i18n } = useTranslation();
+
+  // alert('addEventListener');
+  window.addEventListener('message', event => {
+    const data = event.data;
+    localStorage.setItem('userName', data.message);
+    // console.log(data);
+    // alert("from app.tsx: " + data.message);
+  });
+
+  window.parent.postMessage("readyForAcceptUser", "*");
+
+
   return (
     <div className='App'>
       <ConfigProvider
